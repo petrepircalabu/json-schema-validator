@@ -64,7 +64,7 @@ endif()
 
 target_link_libraries(
     nlohmann_json_schema_validator
-    PUBLIC nlohmann_json::nlohmann_json)
+    PRIVATE "$<BUILD_INTERFACE:nlohmann_json::nlohmann_json>")
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR
    "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
